@@ -6,14 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma-repl": "npx prisma repl"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.2",
     "@clerk/themes": "^1.7.9",
     "@hookform/resolvers": "^3.3.4",
     "@pinecone-database/pinecone": "^1.1.2",
-    "@prisma/client": "^5.8.0",
+    "@prisma/client": "^5.8.1",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",

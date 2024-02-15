@@ -6,7 +6,7 @@ import { auth } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 
 export default function Home() {
-  const {userId} = auth();
+  const { userId } = auth();
 
   // if there's a user, redirect to notes page, else show home page
   if(userId) {
