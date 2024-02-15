@@ -1,3 +1,4 @@
+import Note from '@/components/Note';
 import prisma from '@/lib/db/prisma';
 import { auth } from '@clerk/nextjs';
 import { Metadata } from 'next'
@@ -24,10 +25,26 @@ export default async function NotesPage() {
 
   return (
     <>
-      {
-        allNotes.length > 0 ? (<div>{JSON.stringify(allNotes)}</div>) : "No notes found"
-      }
-    
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full">
+        {/* {
+          allNotes.length > 0 ? (<div>{JSON.stringify(allNotes)}</div>) : "No notes found"
+        } */}
+        
+        {
+          allNotes.map((note) => {
+            return (
+              <Note key={note.id} note={note} />
+            )
+          })
+        }
+        {
+          allNotes.length === 0 && (
+            <div className="w-full col-span-full text-center">
+              <h1 className="text-2xl font-bold">{"You don't have any notes. Try creating your first note!"}</h1>
+            </div>
+          )
+        }
+      </div>
     </>
     
   )
